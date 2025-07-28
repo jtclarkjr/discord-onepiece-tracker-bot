@@ -3,10 +3,10 @@ import { Client, GatewayIntentBits, TextChannel } from 'discord.js'
 import fetch from 'node-fetch'
 
 const DISCORD_TOKEN = process.env.DISCORD_BOT_TOKEN!
-const CHANNEL_ID = process.env.CHANNEL_ID! // Announcements go here
+const CHANNEL_ID = process.env.CHANNEL_ID!
 const ANILIST_API = 'https://graphql.anilist.co'
 
-// Check for required env vars at startup
+// Check for required env vars
 if (!DISCORD_TOKEN) {
   console.error('❌ DISCORD_BOT_TOKEN is not set in environment variables.')
   process.exit(1)
