@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 
 const DISCORD_TOKEN = process.env.DISCORD_BOT_TOKEN!
 const CHANNEL_ID = process.env.CHANNEL_ID!
-const ANILIST_API = 'https://graphql.anilist.co'
+const ANILIST_API = process.env.ANILIST_API!
 
 // Check for required env vars
 if (!DISCORD_TOKEN) {
