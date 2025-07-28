@@ -1,0 +1,22 @@
+{
+  "name": "discord-logger-bot",
+  "version": "1.0.0",
+  "description": "Discord logger bot",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "bun index.ts",
+    "dev": "bun --env-file=.env index.ts"
+  },
+  "author": "jtclarkjr",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.1.0",
+    "hono": "4.8.4",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.18"
+  }
+}
