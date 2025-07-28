@@ -97,12 +97,11 @@ client.on('interactionCreate', async (interaction) => {
 
       if (nextEp) {
         const timeUntilNextEp = nextEp.airingAt * 1000 - Date.now()
-        const hours = Math.floor(timeUntilNextEp / (1000 * 60 * 60))
+        const days = Math.floor(timeUntilNextEp / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((timeUntilNextEp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
         const minutes = Math.floor((timeUntilNextEp % (1000 * 60 * 60)) / (1000 * 60))
 
-        await interaction.reply(
-          `🕒 **Next One Piece Episode (${nextEp.episode}) airs in:** ${hours} hours and ${minutes} minutes!`
-        )
+        await interaction.reply(`Ep ${nextEp.episode}: ${days}d ${hours}h ${minutes}m`)
       } else {
         await interaction.reply('🚨 No upcoming episodes found for One Piece.')
       }
