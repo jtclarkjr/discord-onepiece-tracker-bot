@@ -6,6 +6,17 @@ const DISCORD_TOKEN = process.env.DISCORD_BOT_TOKEN!
 const CHANNEL_ID = process.env.CHANNEL_ID!
 const ANILIST_API = process.env.ANILIST_API!
 
+type AniListResponse = {
+  data: {
+    Media: {
+      id: number
+      title: { romaji: string }
+      nextAiringEpisode: { episode: number; airingAt: number } | null
+      episodes: number
+    }
+  }
+}
+
 // Check for required env vars
 if (!DISCORD_TOKEN) {
   console.error('❌ DISCORD_BOT_TOKEN is not set in environment variables.')
@@ -45,16 +56,9 @@ async function fetchLatestOnePieceEpisode() {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query })
   })
-  const json = (await res.json()) as {
-    data: {
-      Media: {
-        id: number
-        title: { romaji: string }
-        nextAiringEpisode: { episode: number; airingAt: number } | null
-        episodes: number
-      }
-    }
-  }
+
+  const json = (await res.json()) as AniListResponse
+
   return json.data.Media
 }
 
