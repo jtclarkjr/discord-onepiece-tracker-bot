@@ -1,6 +1,5 @@
 import 'dotenv/config'
 import { Client, GatewayIntentBits, TextChannel } from 'discord.js'
-import fetch from 'node-fetch'
 
 const DISCORD_TOKEN = process.env.DISCORD_BOT_TOKEN!
 const CHANNEL_ID = process.env.CHANNEL_ID!
