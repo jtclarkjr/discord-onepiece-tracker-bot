@@ -1,7 +1,7 @@
 {
-  "name": "discord-logger-bot",
+  "name": "discord-onepiece-bot",
   "version": "1.0.0",
-  "description": "Discord logger bot",
+  "description": "Discord One Piece bot",
   "main": "index.js",
   "type": "module",
   "scripts": {
