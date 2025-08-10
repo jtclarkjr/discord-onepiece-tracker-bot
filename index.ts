@@ -167,7 +167,7 @@ client.once('ready', async () => {
         const channel = (await client.channels.fetch(CHANNEL_ID)) as TextChannel
         if (channel) {
           await channel.send(
-            `🦜 **One Piece Episode ${currentEpNum} is now live!**\nIt's 11pm JST Sunday! Set sail for adventure! <https://anilist.co/anime/21/One-Piece/>`
+            `🦜 **One Piece Episode ${currentEpNum} is now live!**\nIt's 11:16pm JST Sunday! Set sail for adventure! <https://anilist.co/anime/21/One-Piece/>`
           )
         }
       } catch (err) {
