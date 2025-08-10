@@ -140,23 +140,23 @@ client.once('ready', async () => {
   checkOnePieceAiring()
   setInterval(checkOnePieceAiring, 1000 * 60 * 15)
 
-  // Schedule a notification for 11pm JST every Sunday
+  // Schedule a notification for 11:16pm JST every Sunday
   async function scheduleWeeklyJSTNotification() {
     const now = new Date()
-    // JST is UTC+9, so 11pm JST is 14:00 UTC
+    // JST is UTC+9, so 11:16pm JST is 14:16 UTC
     const currentUTCDay = now.getUTCDay()
     const currentUTCHours = now.getUTCHours()
     const currentUTCMinutes = now.getUTCMinutes()
     let daysUntilSunday = (7 - currentUTCDay) % 7
-    if (daysUntilSunday === 0 && (currentUTCHours > 14 || (currentUTCHours === 14 && currentUTCMinutes >= 0))) {
+    if (daysUntilSunday === 0 && (currentUTCHours > 14 || (currentUTCHours === 14 && currentUTCMinutes >= 16))) {
       daysUntilSunday = 7
     }
-    // Next Sunday 14:00 UTC
+    // Next Sunday 14:16 UTC
     const nextSundayUTC = new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
       now.getUTCDate() + daysUntilSunday,
-      14, 0, 0
+      14, 16, 0
     ))
     const msUntilNextSunday = nextSundayUTC.getTime() - now.getTime()
     setTimeout(async () => {
