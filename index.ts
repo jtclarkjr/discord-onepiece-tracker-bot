@@ -56,9 +56,14 @@ async function fetchLatestOnePieceEpisode() {
     body: JSON.stringify({ query })
   })
 
-  const json = (await res.json()) as AniListResponse
+  const json = await res.json();
 
-  return json.data.Media
+  if (!res.ok) {
+    console.error('AniList API response unexpected:', JSON.stringify(json, null, 2));
+    throw new Error('AniList API response missing Media data');
+  }
+
+  return json.data.Media;
 }
 
 async function checkOnePieceAiring() {
