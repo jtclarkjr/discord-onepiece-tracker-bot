@@ -36,3 +36,7 @@ Example:
 /onepiece
 ```
 The bot will reply with the time remaining until the next episode.
+
+#### Automatic Notifications
+
+The bot automatically sends notifications to the configured channel at **11:16 PM JST** (Japan Standard Time) every Sunday, reminding users that a new One Piece episode is about to air. This notification is sent approximately 30 minutes before the episode typically becomes available.
